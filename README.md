@@ -1,4 +1,4 @@
-# 3D Gaussian SPlatting Docker Setup
+# 3D Gaussian Splatting Docker Setup
 
 ## 1. Install Nvidia Driver
 make sure you have the  nvidia driver is compatible with your cuda version 11.8
