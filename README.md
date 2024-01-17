@@ -28,5 +28,6 @@ DOCKER_BUILDKIT=0 is needed to enable nvidia runtime during building docker
 
 ## 5. Run docker image
 ```
-docker run --gpus all -it --rm  gaussian_splatting
+xhost +
+docker run --runtime=nvidia --rm -it -v /home/da/extra/data:/data -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY -e XAUTHORITY -e NVIDIA_DRIVER_CAPABILITIES=all --net host gaussian_splatting
 ```
