@@ -27,7 +27,7 @@ RUN pip install ./submodules/diff-gaussian-rasterization
 RUN pip install ./submodules/simple-knn
 ENV TZ=Asia/Dubai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt-get install cmake-qt-gui libglew-dev libassimp-dev libboost-all-dev libgtk-3-dev libopencv-dev libglfw3-dev libavdevice-dev libavcodec-dev libeigen3-dev libxxf86vm-dev libembree-dev libopenexr-dev libopenimageio-dev libtbb-dev libilmbase-dev libomp-dev -y
+RUN apt-get update && apt-get install cmake-qt-gui libglew-dev libassimp-dev libboost-all-dev libgtk-3-dev libopencv-dev libglfw3-dev libavdevice-dev libavcodec-dev libeigen3-dev libxxf86vm-dev libembree-dev libopenexr-dev libopenimageio-dev libtbb-dev libilmbase-dev libomp-dev -y
 WORKDIR /gaussian-splatting/SIBR_viewers
 RUN cmake -Bbuild . -DCMAKE_BUILD_TYPE=Release
 RUN cmake --build build -j8 --target install
