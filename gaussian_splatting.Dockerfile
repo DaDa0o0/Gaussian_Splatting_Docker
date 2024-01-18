@@ -21,7 +21,7 @@ RUN apt-get install curl git python3 python3-pip -y
 RUN pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu118
 RUN pip install plyfile==0.8.1 tqdm
 RUN apt-get install ninja-build
-RUN git clone https://github.com/graphdeco-inria/gaussian-splatting --recursive
+RUN git clone --depth 1 -b multi_GPU https://github.com/DaDa0o0/gaussian-splatting.git --recursive
 WORKDIR /gaussian-splatting
 RUN pip install ./submodules/diff-gaussian-rasterization
 RUN pip install ./submodules/simple-knn
