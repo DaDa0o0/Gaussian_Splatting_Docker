@@ -31,3 +31,7 @@ DOCKER_BUILDKIT=0 is needed to enable nvidia runtime during building docker
 xhost +
 docker run --runtime=nvidia --rm -it -v /home/da/extra/data:/data -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY -e XAUTHORITY -e NVIDIA_DRIVER_CAPABILITIES=all --net host gaussian_splatting
 ```
+### 6. Train
+```
+python3 train.py -s /data/bluerov_gaussian/Blyth -r 2 --ip 137.195.63.236 --port 6009 --save_iterations 1000 2000 3000 30000
+```
